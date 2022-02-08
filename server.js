@@ -1,5 +1,6 @@
 const express = require('express')
 require('dotenv').config()
+const cors = require('cors')
 
 const connectDB = require('./config/db')
 
@@ -10,6 +11,9 @@ const task = require('./routes/todo')
 
 //Connect database
 connectDB()
+
+//cors
+app.use(cors({ origin: true, credentials: true }))
 
 //Initalize middleware
 app.use(express.json({ extended: false }))
