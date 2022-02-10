@@ -1,7 +1,11 @@
 const express = require('express')
 const router = express.Router()
 
-const { getAllTasks, createTask } = require('../controllers/todo')
+const {
+  getAllTasks,
+  createTask,
+  putUpdateTask,
+} = require('../controllers/todo')
 
 /**
  * @route GET api/task
@@ -16,5 +20,12 @@ router.get('/', getAllTasks)
  * @access public
  */
 router.post('/', createTask)
+
+/**
+ * @route PUT api/task/:id
+ * @description update task
+ * @access public
+ */
+router.put('/:id', putUpdateTask)
 
 module.exports = router

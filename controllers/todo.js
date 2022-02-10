@@ -18,3 +18,13 @@ exports.createTask = (req, res) => {
         .json({ message: 'Failed to create task', error: err.message })
     )
 }
+
+exports.putUpdateTask = (req, res) => {
+  Task.findByIdAndUpdate(req.params.id, req.body)
+    .then(data => res.json({ message: 'updated successfully', data }))
+    .catch(err =>
+      res
+        .status(400)
+        .json({ message: 'Failed to update task', error: err.message })
+    )
+}
