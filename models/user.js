@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const TaskSchema = new mongoose.Schema({
   name: {
-    type: "String",
+    type: 'String',
     required: true,
   },
-});
+})
 
-const User = mongoose.model("user", UserSchema);
+const User = mongoose.model('user', UserSchema)
 
-module.exports = User;
+module.exports = User

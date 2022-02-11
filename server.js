@@ -8,6 +8,7 @@ const app = express()
 
 //Routes
 const task = require('./routes/todo')
+const user = require('./routes/user')
 
 //Connect database
 connectDB()
@@ -20,6 +21,7 @@ app.use(express.json({ extended: false }))
 app.get('/', (req, res) => res.send('Server up and running'))
 
 app.use('/api/task', task)
+app.use('/api/user', user)
 
 //Setting up port
 const PORT = process.env.PORT || 8000
