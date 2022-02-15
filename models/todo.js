@@ -5,10 +5,10 @@ const TaskSchema = new mongoose.Schema({
     type: 'String',
     required: true,
   },
-  status: {
-    type: 'String',
+  completed: {
+    type: Boolean,
     required: true,
-    default: 'Unfinished',
+    default: false,
   },
 })
 
